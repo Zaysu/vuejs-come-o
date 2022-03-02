@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <title>Vue Aula</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>Escolha Seu time</p>
+        <h3>1 = Vasco , 2 = Botafogo, 3 = Fluminense, 4 Flamengo</h3>
+        <input type="text" v-model="textDigitando">
+        <br>
+        {{textDigitando}}
+        <br>
+        <div v-if="textDigitando == 1">
+            <img v-bind:src="scrImg" v-bind:title="titleImg" width="100px">
+        </div>
+
+        <div v-else-if="textDigitando == 2">
+            <img v-bind:src="scrImg1" v-bind:title="titleImg" width="100px">
+        </div>
+
+        <div v-else-if="textDigitando == 3">
+            <img v-bind:src="scrImg2" v-bind:title="titleImg" width="100px">
+        </div>
+
+        <div v-else-if="textDigitando == 4">
+            <img v-bind:src="scrImg3" v-bind:title="titleImg" width="100px">
+        </div>
+        <div v-else>
+            <img v-bind:src="scrImg4" v-bind:title="titleImg" width="100px">
+        </div>
+       
+
+        </p>
+    </div> 
+
+    <script>
+        new Vue({
+
+           el: '#app',
+           data: {
+                textDigitando: '',
+                scrImg: 'vascocruz.png',
+                scrImg1: 'botlogo.png',
+                scrImg2: 'flulogo.png',
+                scrImg3: 'flalogo.png',
+                scrImg4: 'sem.png',
+                tittleImg: 'Time Carioca',
+                 
+           },
+
+        })
+    </script>
+
+</body>
+</html>
